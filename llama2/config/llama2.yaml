@@ -1,0 +1,6 @@
+# Llama‑2 inference service configuration
+# Simple config for the FastAPI app
+# Adjust the model path and device settings as needed.
+model_path: /app/models/llama-2-7b
+device: cuda
+port: 8000

@@ -1,0 +1,4 @@
+# FAISS service configuration
+# Defines the path to the vector index and the port for the REST API.
+index_path: /app/index/faiss.index
+port: 5000

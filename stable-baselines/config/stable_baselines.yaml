@@ -1,0 +1,4 @@
+# Stable‑Baselines3 RL service configuration
+# Path to the trained policy and the port for the inference API.
+policy_path: /app/policy/rl_policy.pt
+port: 8001

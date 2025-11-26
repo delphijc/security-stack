@@ -1,0 +1,6 @@
+# Elasticsearch configuration for single node
+cluster.name: security-stack
+network.host: 0.0.0.0
+http.port: 9200
+discovery.type: single-node
+xpack.security.enabled: false

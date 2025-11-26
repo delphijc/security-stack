@@ -1,0 +1,61 @@
+version: "3.8"
+services:
+  elasticsearch:
+    build: ./elastic
+    container_name: elasticsearch
+    environment:
+      - discovery.type=single-node
+    ports:
+      - "9200:9200"
+      - "5601:5601"
+    volumes:
+      - ./elastic/config/elasticsearch.yml:/usr/share/elasticsearch/config/elasticsearch.yml
+  kibana:
+    image: docker.elastic.co/kibana/kibana:7.17.0
+    container_name: kibana
+    ports:
+      - "5601:5601"
+    depends_on:
+      - elasticsearch
+  wazuh-manager:
+    build: ./wazuh
+    container_name: wazuh-manager
+    ports:
+      - "55000:55000"
+    volumes:
+      - ./wazuh/config/ossec.conf:/var/ossec/etc/ossec.conf
+  opencti:
+    build: ./opencti
+    container_name: opencti
+    ports:
+      - "8080:8080"
+  llama2:
+    build: ./llama2
+    container_name: llama2
+    ports:
+      - "8000:8000"
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: all
+              capabilities: [gpu]
+  faiss:
+    build: ./faiss
+    container_name: faiss
+    ports:
+      - "5000:5000"
+  stable-baselines:
+    build: ./stable-baselines
+    container_name: stable-baselines
+    ports:
+      - "8001:8001"
+  neo4j:
+    build: ./neo4j
+    container_name: neo4j
+    ports:
+      - "7474:7474"
+      - "7687:7687"
+    environment:
+      - NEO4J_AUTH=neo4j/neo4jpassword
