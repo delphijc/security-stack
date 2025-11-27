@@ -1,4 +1,3 @@
-version: "3.8"
 services:
   elasticsearch:
     build: ./elastic
@@ -7,7 +6,6 @@ services:
       - discovery.type=single-node
     ports:
       - "9200:9200"
-      - "5601:5601"
     volumes:
       - ./elastic/config/elasticsearch.yml:/usr/share/elasticsearch/config/elasticsearch.yml
   kibana:
@@ -34,13 +32,6 @@ services:
     container_name: llama2
     ports:
       - "8000:8000"
-    deploy:
-      resources:
-        reservations:
-          devices:
-            - driver: nvidia
-              count: all
-              capabilities: [gpu]
   faiss:
     build: ./faiss
     container_name: faiss
