@@ -24,7 +24,7 @@ By participating in this project, you agree to maintain a respectful and inclusi
    ```
 3. **Add the upstream remote**:
    ```bash
-   git remote add upstream https://github.com/smbsec/security-stack.git
+   git remote add upstream https://github.com/delphijc/security-stack.git
    ```
 4. **Create a new branch** for your work:
    ```bash
@@ -101,7 +101,7 @@ Have an idea? We'd love to hear it! Please check [ISSUES.md](ISSUES.md) for guid
 
 ## Licensing
 
-By contributing to Security Stack, you agree that your contributions will be licensed under the [MIT License](LICENSE).
+By contributing to Security Stack, you agree that your contributions will be licensed under the [MIT License](../LICENSE).
 
 ## Questions?
 
