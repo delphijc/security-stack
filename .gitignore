@@ -1,4 +1,94 @@
-# Example .gitignore content
-node_modules/
+# ============================================
+# security-stack .gitignore
+# Security tools and infrastructure
+# ============================================
+
+# ----- Secrets & Credentials -----
 .env
+.env.*
+!.env.example
+*.pem
+*.key
+*.cert
+*.p12
+*.pfx
+*.jks
+*.keystore
+*.secret
+.secret*
+token.json
+credentials.json
+service-account*.json
+.npmrc
+.netrc
+.htpasswd
+
+# ----- API Keys & Auth Files -----
+apikeys*
+api_keys*
+auth.json
+secrets.yaml
+secrets.yml
+vault.json
+
+# ----- SSH & GPG -----
+id_rsa*
+id_ed25519*
+id_ecdsa*
+id_dsa*
+.gnupg/
+
+# ----- OS Generated -----
+.DS_Store
+._*
+Thumbs.db
+*.swp
+*.swo
+*~
+
+# ----- IDE & Editor -----
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+*.code-workspace
+
+# ----- Build & Dependencies -----
+node_modules/
+dist/
+build/
+out/
+__pycache__/
+*.pyc
+venv/
+.venv/
+
+# ----- Logs & Runtime -----
 *.log
+logs/
+*.pid
+
+# ----- Security Scan Outputs (may contain sensitive findings) -----
+reports/
+results/
+*.sarif
+*.nessus
+*.nmap
+
+# ----- Database Files -----
+*.db
+*.db-shm
+*.db-wal
+*.sqlite
+
+# ----- Wordlists & Large Files -----
+wordlists/
+*.zip
+*.tar.gz
+*.tgz
+
+# ----- Personal Data -----
+personal/
+private/
+targets.txt
+scope.txt
