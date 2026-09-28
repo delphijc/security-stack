@@ -92,3 +92,7 @@ personal/
 private/
 targets.txt
 scope.txt
+
+# Security audit artifacts
+sbom.json
+security-findings.md
